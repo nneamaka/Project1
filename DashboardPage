@@ -1,0 +1,40 @@
+using Project1.Utilities;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Chrome;
+using System;
+
+namespace Project1.PageObject
+{
+    class DashboardPage
+    {
+
+        public DashboardPage()
+        {
+            PageFactory.InitElements(Hooks.Driver, this);
+        }
+
+
+        [FindsBy(How = How.LinkText, Using = "https://giftrete.com/register/?refer=233498")]
+        private IWebElement referalLinkIsDisplayed { get; set; }
+
+        internal static object ReferralLinkIsDisplayed()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal class ReferalLinkIsDisplayed
+        {
+            internal static void Click()
+            {
+                throw new NotImplementedException();
+            }
+        }
+    
+    
+
+
+
+
+        
+    
