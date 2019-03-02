@@ -1,0 +1,50 @@
+using System;
+using Project1.PageObject;
+using Project1.Utilities;
+using NUnit.Framework;
+using FluentAssertion
+using Project1.PageObjects;
+using TechTalk.SpecFlow;
+
+{
+namespace Project1.Stepdefinitions
+
+{ [Binding]
+    public class DashboardSteps
+
+
+                DashboardPage dashboard;
+
+    public DashboardSteps()
+
+    {
+        dashboard = new DashboardPage();
+        registration = new RegistrationPage();
+    }
+
+
+    [Given(@"I navigate to giftrete website")]
+    public void GivenINavigateToGiftreteWebsite()
+
+    {
+        Hooks.Driver.Navigate().GoToUrl("http://www.giftrete.com");
+        Hooks.Driver.Manage().Window.Maximize();
+    }
+
+    
+     [When(@"my dashboard is displayed")]
+    public void WhenMyDashboardIsDisplayed();
+
+        
+            // assert that page is displayed DashboardPage.MyDashboardIsDisplayed();
+            Assert.Equals(DashboardPage.ReferalLinkIsDisplayed(); true);
+        {
+        
+        [Then(@"referrallink is displayed")]
+        public void ThenReferrallinkIsDisplayed()
+
+        {
+            DashboardPage.ReferalLinkIsDisplayed.Click();
+        }
+    }
+}
